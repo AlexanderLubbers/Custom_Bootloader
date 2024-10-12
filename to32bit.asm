@@ -19,7 +19,7 @@ init_32bit:
     mov gs, ax
 
     ; setup the stack
-    mov edp, 0x90000 ; this is the location where the stack wil start
+    mov ebp, 0x90000 ; this is the location where the stack wil start
     mov esp, ebp
 
     call BEGIN_32BIT ; start executing the kernal and other 32bit code

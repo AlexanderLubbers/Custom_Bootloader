@@ -5,7 +5,7 @@
 [org 0x7c00]
 ; defines a constant called KERNAL_OFFSET with a certain value
 ; this is where the kernel will be loaded into memory
-KERNAL_OFFSET equ 0x1000
+KERNEL_OFFSET equ 0x1000
 ; save the boot drive number to the dl register
 mov [BOOT_DRIVE], dl;
 ; set up the stack
@@ -19,7 +19,7 @@ mov sp, bp ; initialize the stack. any push or pop operatings will be in this me
 call load_kernel ; this function will load the kernel from disk into memory at the address defined by KERNAL_OFFSET
 ; 16 bit real mode is used in bootloading and BIOS routines. The main goal of this mode is to get the system up and running and then switching to a more advanced mode
 ; 32 bit protected mode and 64 bit protected mode are used to start loading the operating system and applications. It is a more advanced version of 16 bit real mode.
-call to_32bit ; switch the CPU from 16 bit real mode to 32 bit protected mode
+call to32bit ; switch the CPU from 16 bit real mode to 32 bit protected mode
 
 ; jump to the current address and give execution control to in. $ refers to current instruction
 ; this leads to the same instruction being executed over and over again
@@ -30,7 +30,7 @@ jmp $
 
 %include "disk.asm"
 %include "gdt.asm"
-%include "switch-to-32bit.asm"
+%include "to32bit.asm"
 
 [bits 16]
 load_kernel:
