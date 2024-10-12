@@ -8,7 +8,7 @@
 ; es:bx	    Memory address to load into (buffer address pointer)
 
 disk_load:
-    ; the stack is like a temperoray storage area where values can be saved for later use. registers should be stored in the stack to ensure that none of their value are changed
+    ; the stack is like a temporary storage area where values can be saved for later use. registers should be stored in the stack to ensure that none of their value are changed
     pusha ; push all general purpose registers onto the stack
     push dx
 

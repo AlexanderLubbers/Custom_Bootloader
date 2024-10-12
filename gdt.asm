@@ -60,7 +60,7 @@ gdt_descriptor:
     dw gdt_end - gdt_start - 1 ; size (16 bit)
     dd gdt_start ; address (32 bit). will be loaded into the GDTR register
 
-;calcualte the offsets
+;calculate the offsets
 CODE_SEG equ gdt_code - gdt_start
 DATA_SEG equ gdt_data - gdt_start
 
