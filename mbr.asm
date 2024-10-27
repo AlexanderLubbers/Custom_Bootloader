@@ -1,3 +1,10 @@
+; summary of what the file does:
+; mbr.asm serves as the boot sector. its the first program that runs when BIOS loades the bootlaoder from disk into memeory at address 0x7C00(because of the origin directive)
+; stores boot drive number in dl so that disk operations know what drive to read from
+; sets up the stack to ensure that any function calls or interrupts have memory to store values
+; loads the kernel from disk
+; transfers the mode to 32 bit protected mode
+
 [bits 16]
 ; org is short for origin and is an assembly directive
 ; this tells the program that the code starts at the memory address 0x7c00

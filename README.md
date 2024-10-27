@@ -1,5 +1,9 @@
 # Custom_Bootloader
-## My interpretation of how this program is going to run
+## Quick summary of how I think the bootloader works
+* mbr.asm is first loaded by BIOS
+* mbr then loads the kernel from the disk before converting the mode to 32 bit protected mode
+* The control is then given to the kernel
+* by transferring control to the kernel, execution begins at _start
 ## CPU
 ### Registers
 * They are the working memory of the central processing unit
